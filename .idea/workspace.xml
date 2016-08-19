@@ -13,12 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc98f1a-a416-4335-88e6-871a3fcd79bb" name="Default" comment="Added implementation for List, Vector and starting on Map.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Include/KAI/Allocator.h" afterPath="$PROJECT_DIR$/Include/KAI/Allocator.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Include/KAI/Container/Vector.h" afterPath="$PROJECT_DIR$/Include/KAI/Container/Vector.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Allocators.c" afterPath="$PROJECT_DIR$/Library/Allocators.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Container/List.c" afterPath="$PROJECT_DIR$/Library/Container/List.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Container/Vector.c" afterPath="$PROJECT_DIR$/Library/Container/Vector.c" />
     </list>
     <ignored path="KAI_C.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +37,21 @@
       <file leaf-file-name="List.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/Container/List.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
-              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+            <state relative-caret-position="-929">
+              <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Allocators.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Library/Allocators.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Base.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Base.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Include/KAI/Base.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -108,16 +114,6 @@
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestFoo.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/Foo/TestFoo.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,7 +152,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Test/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Library/Allocators.c" />
         <option value="$PROJECT_DIR$/Library/List.c" />
         <option value="$PROJECT_DIR$/Library/Map.c" />
         <option value="$PROJECT_DIR$/Include/KAI/Container/Map.h" />
@@ -190,10 +185,11 @@
         <option value="$PROJECT_DIR$/Include/KAI/ForwardDeclarations.h" />
         <option value="$PROJECT_DIR$/Include/KAI/Base.h" />
         <option value="$PROJECT_DIR$/Include/KAI/Container/List.h" />
-        <option value="$PROJECT_DIR$/Library/Container/List.c" />
         <option value="$PROJECT_DIR$/Include/KAI/Allocator.h" />
         <option value="$PROJECT_DIR$/Library/Container/Vector.c" />
         <option value="$PROJECT_DIR$/Include/KAI/Container/Vector.h" />
+        <option value="$PROJECT_DIR$/Library/Container/List.c" />
+        <option value="$PROJECT_DIR$/Library/Allocators.c" />
       </list>
     </option>
   </component>
@@ -407,12 +403,12 @@
       <updated>1471569089643</updated>
       <workItem from="1471569091043" duration="24577000" />
       <workItem from="1471602385324" duration="8460000" />
-      <workItem from="1471614357971" duration="229000" />
+      <workItem from="1471614357971" duration="660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33266000" />
+    <option name="totallyTimeSpent" value="33697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="29" width="1440" height="873" extended-state="6" />
@@ -512,7 +508,7 @@
         <state relative-caret-position="345">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -522,7 +518,7 @@
         <state relative-caret-position="600">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,16 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Allocators.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -600,7 +586,7 @@
         <state relative-caret-position="345">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -684,6 +670,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +687,7 @@
         <state relative-caret-position="333">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -726,16 +713,6 @@
         <state relative-caret-position="406">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Container/List.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,6 +763,24 @@
           <folding>
             <element signature="e#14#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Container/List.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-929">
+          <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Allocators.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

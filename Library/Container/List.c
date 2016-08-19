@@ -97,7 +97,7 @@ bool k_List_Empty(k_List *self)
 	return self->head == null;
 }
 
-static k_List_Node *GetFreeNode(k_List *self)
+static k_List_Node *GetNode(k_List *self)
 {
 	k_List_Node *node = 0;
 
@@ -106,16 +106,14 @@ static k_List_Node *GetFreeNode(k_List *self)
 		node = self->pool;
 		self->pool = node->next;
 
-		k_Construct_Function ctor = self->itemAllocator->construct;
-		if (ctor)
-			ctor(node, self);
-	}
-	else
-	{
-		node = NewNode(self);
+		k_Construct_Function construct = self->itemAllocator->construct;
+		if (construct)
+			construct(node, self);
+
+		return node;
 	}
 
-	return node;
+	return NewNode(self);
 }
 
 static void PushBack(k_List *self, k_List_Node *node)
@@ -134,7 +132,7 @@ static void PushBack(k_List *self, k_List_Node *node)
 
 k_List_Node *k_List_PushBack(k_List *self)
 {
-	k_List_Node *node = GetFreeNode(self);
+	k_List_Node *node = GetNode(self);
 
 	PushBack(self, node);
 

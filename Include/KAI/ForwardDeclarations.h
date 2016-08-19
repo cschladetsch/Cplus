@@ -18,4 +18,5 @@ typedef struct k_StringStream_t k_StringStream;
 typedef struct k_BinaryStream_t k_BinaryStream;
 
 typedef struct k_Registry_t k_Registry;
+
 typedef void *k_Any;

@@ -12,7 +12,7 @@ typedef struct k_List_Node_t
 typedef struct k_List_t
 {
 	k_Base base;
-	const k_Allocator *elementAllocator;
+	const k_Allocator *itemAllocator;
 	k_List_Node *head, *tail;
 	k_List_Node *pool;
 } k_List;

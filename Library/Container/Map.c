@@ -62,7 +62,7 @@ static k_List MakeBucket(k_Map *map)
 {
 	k_List list;
 	k_List_Alloc.construct(&list, 0);
-	list.elementAllocator = k_GetAllocator(sizeof(Pair));
+	list.itemAllocator = k_GetAllocator(sizeof(Pair));
 	return list;
 }
 
@@ -75,7 +75,7 @@ void k_Map_Destroy(k_Map *self)
 {
 	k_Vector_Iterate(self->buckets, DestroyBucket);
 	k_Vector_Destroy(self->buckets);
-	self->buckets = NULL;
+	self->buckets = null;
 
 	if (self->base.allocated)
 		free(self);

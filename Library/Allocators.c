@@ -18,7 +18,7 @@ void k_Containers_Init()
 void k_Containers_Teardown()
 {
 	k_Vector_Destroy(allocators);
-	allocators = NULL;
+	allocators = null;
 }
 
 k_Allocator *k_GetAllocator(size_t elementSize)

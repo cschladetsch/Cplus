@@ -42,7 +42,7 @@ void k_Vector_Destroy(k_Vector *self)
 {
 	k_Vector_Clear(self);
 	free(self->data);
-	self->data = NULL;
+	self->data = null;
 	self->size = 0;
 }
 
@@ -97,7 +97,7 @@ k_Any k_Vector_At(k_Vector *self, size_t index)
 {
 	assert(index < self->size);
 	if (index >= self->size)
-		return NULL;
+		return null;
 
 	return self->data + index*self->elementAlloc->elementSize;
 }
@@ -116,7 +116,7 @@ k_Any k_Vector_Back(k_Vector *self)
 {
 	assert(self->size > 0);
 	if (self->size == 0)
-		return NULL;
+		return null;
 
 	return self->data + self->elementAlloc->elementSize*(self->size - 1);
 }
@@ -125,7 +125,7 @@ k_Any k_Vector_Front(k_Vector *self)
 {
 	assert(self->size > 0);
 	if (self->size == 0)
-		return NULL;
+		return null;
 
 	return self->data;
 }

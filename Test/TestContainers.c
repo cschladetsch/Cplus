@@ -86,7 +86,7 @@ void Sum(k_List_Node *node)
 
 void TestList()
 {
-	k_Allocator alloc = { NULL, ConstructMyNode, DestroyMyNode, sizeof(MyNode) };
+	k_Allocator alloc = { null, ConstructMyNode, DestroyMyNode, sizeof(MyNode) };
 	k_List *list = k_List_New2(&alloc);
 
 	for (int n = 0; n < 4; ++n)

@@ -13,3 +13,6 @@ typedef struct k_Base_t
 	k_Allocator *alloc;
 	bool allocated;
 } k_Base;
+
+// I am tied of yelling
+#define null 0

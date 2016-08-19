@@ -7,10 +7,10 @@
 typedef SELF
 {
 	k_Base base;
-	const k_Allocator *elementAlloc;
 	size_t size;
 	size_t reserved;
 	char *data;
+	const k_Allocator *itemAlloc;
 
 	void (*Destroy)(SELF *);
 	size_t (*Size)(SELF *);

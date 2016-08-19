@@ -11,7 +11,7 @@ static void Construct(k_Any store, k_Any itemAlloc)
 	k_Vector *self = (k_Vector *)store;
 	memset(self, 0, sizeof(k_Vector));
 	self->base.alloc = &k_Vector_Alloc;
-	self->elementAlloc = (k_Allocator *)itemAlloc;
+	self->itemAlloc = (k_Allocator *)itemAlloc;
 }
 
 static k_Any New(k_Any itemAlloc)
@@ -54,7 +54,7 @@ void k_Vector_Destroy(k_Vector *self)
 
 static void k_Vector_DestroyElement(k_Vector *self, k_Any item)
 {
-	const k_Allocator *alloc = self->elementAlloc;
+	const k_Allocator *alloc = self->itemAlloc;
 	if (!alloc->destroy)
 		return;
 
@@ -63,13 +63,13 @@ static void k_Vector_DestroyElement(k_Vector *self, k_Any item)
 
 void k_Vector_Clear(k_Vector *self)
 {
-	const k_Allocator *alloc = self->elementAlloc;
+	const k_Allocator *alloc = self->itemAlloc;
 	k_Destroy_Function destroy = alloc->destroy;
 	if (destroy)
 	{
 		char *item = self->data;
 		size_t size = self->size;
-		size_t elementSize = alloc->elementSize;
+		size_t elementSize = alloc->size;
 		for (size_t n = 0; n < size; ++n, item += elementSize)
 			destroy(item);
 	}
@@ -95,7 +95,7 @@ void k_Vector_Reserve(k_Vector *self, size_t newMax)
 	if (newMax <= self->reserved)
 		return;
 
-	size_t elementSize = self->elementAlloc->elementSize;
+	size_t elementSize = self->itemAlloc->size;
 	k_Any data = malloc(newMax*elementSize);
 	memcpy(data, self->data, self->size*elementSize);
 	self->data = data;
@@ -108,7 +108,7 @@ k_Any k_Vector_At(k_Vector *self, size_t index)
 	if (index >= self->size)
 		return null;
 
-	return self->data + index*self->elementAlloc->elementSize;
+	return self->data + index*self->itemAlloc->size;
 }
 
 k_Any k_Vector_Begin(k_Vector *self)
@@ -118,7 +118,7 @@ k_Any k_Vector_Begin(k_Vector *self)
 
 k_Any k_Vector_End(k_Vector *self)
 {
-	return self->data + self->elementAlloc->elementSize*self->size;
+	return self->data + self->itemAlloc->size*self->size;
 }
 
 k_Any k_Vector_Back(k_Vector *self)
@@ -127,7 +127,7 @@ k_Any k_Vector_Back(k_Vector *self)
 	if (self->size == 0)
 		return null;
 
-	return self->data + self->elementAlloc->elementSize*(self->size - 1);
+	return self->data + self->itemAlloc->size*(self->size - 1);
 }
 
 k_Any k_Vector_Front(k_Vector *self)
@@ -149,7 +149,7 @@ void k_Vector_PushBack(k_Vector *self, k_Any element)
 	if (self->size == self->reserved)
 		k_Vector_Reserve(self, k_Max_size_t(8, self->size*2));
 
-	size_t elemSize = self->elementAlloc->elementSize;
+	size_t elemSize = self->itemAlloc->size;
 	memcpy(k_Vector_End(self), element, elemSize);
 	self->size++;
 }
@@ -166,7 +166,7 @@ void k_Vector_PopBack(k_Vector *self)
 
 void k_Vector_Iterate(k_Vector *self, void (*fun)(k_Any))
 {
-	size_t esize = self->elementAlloc->elementSize;
+	size_t esize = self->itemAlloc->size;
 	size_t size = self->size;
 	char *item = self->data;
 	for (int n = 0; n < size; ++n, item += esize)
@@ -175,5 +175,5 @@ void k_Vector_Iterate(k_Vector *self, void (*fun)(k_Any))
 
 void k_Vector_Sort(k_Vector *self, int (*compare)(const void *, const void *))
 {
-	qsort(self->data, self->size, self->elementAlloc->elementSize, compare);
+	qsort(self->data, self->size, self->itemAlloc->size, compare);
 }

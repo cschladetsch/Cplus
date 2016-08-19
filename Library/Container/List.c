@@ -30,10 +30,10 @@ static k_List *NewList()
 	return (k_List *)New(0);
 }
 
-k_List *k_List_New(size_t elementSize)
+k_List *k_List_New(size_t itemSize)
 {
 	k_List *list = NewList();
-	list->itemAllocator = k_GetAllocator(elementSize);
+	list->itemAllocator = k_GetAllocator(itemSize);
 	return list;
 }
 
@@ -72,14 +72,14 @@ static k_List_Node *NewNode(k_List *self)
 	if (elemAlloc->new)
 		return (k_List_Node *)elemAlloc->new(0);
 
-	k_List_Node *node = (k_List_Node *)malloc(elemAlloc->elementSize);
+	k_List_Node *node = (k_List_Node *)malloc(elemAlloc->size);
 	if (elemAlloc->construct)
 	{
 		elemAlloc->construct(node, self);
 		return node;
 	}
 
-	memset(node, 0, elemAlloc->elementSize);
+	memset(node, 0, elemAlloc->size);
 	return node;
 }
 
@@ -143,9 +143,12 @@ k_List_Node *k_List_PushBack(k_List *self)
 
 static void Release(k_List *self, k_List_Node *node)
 {
-	k_Destroy_Function dtor = self->itemAllocator->destroy;
-	if (dtor)
-		dtor(node);
+	if (!node)
+		return;
+
+	k_Destroy_Function destroy = self->itemAllocator->destroy;
+	if (destroy)
+		destroy(node);
 
 	node->next = self->pool;
 	self->pool = node;

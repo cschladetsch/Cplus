@@ -30,10 +30,10 @@ static k_List *NewList()
 	return (k_List *)New(0);
 }
 
-k_List *k_List_New(size_t size)
+k_List *k_List_New(size_t elementSize)
 {
 	k_List *list = NewList();
-	list->itemAllocator = k_GetAllocator(size);
+	list->itemAllocator = k_GetAllocator(elementSize);
 	return list;
 }
 
@@ -46,7 +46,7 @@ k_List *k_List_New2(const k_Allocator *alloc)
 
 static void FreeList(k_List_Node *head, k_Destroy_Function destroy)
 {
-	for (k_List_Node *node = head; node != NULL; )
+	for (k_List_Node *node = head; node != null; )
 	{
 		k_List_Node *next = node->next;
 		if (destroy)
@@ -60,7 +60,7 @@ static void FreeList(k_List_Node *head, k_Destroy_Function destroy)
 void k_List_Destroy(k_List *self)
 {
 	FreeList(self->head, self->itemAllocator->destroy);
-	FreeList(self->pool, NULL);      // items in the pool have already been destroyed
+	FreeList(self->pool, null);      // items in the pool have already been destroyed
 
 	if (self->base.allocated)
 		free(self);
@@ -94,22 +94,21 @@ size_t k_List_Size(k_List *self)
 
 bool k_List_Empty(k_List *self)
 {
-	return self->head == NULL;
+	return self->head == null;
 }
 
 static k_List_Node *GetFreeNode(k_List *self)
 {
 	k_List_Node *node = 0;
 
-	if (self->pool != NULL)
+	if (self->pool != null)
 	{
 		node = self->pool;
 		self->pool = node->next;
 
-		if (self->itemAllocator->construct)
-		{
-			self->itemAllocator->construct(node, self);
-		}
+		k_Construct_Function ctor = self->itemAllocator->construct;
+		if (ctor)
+			ctor(node, self);
 	}
 	else
 	{
@@ -122,14 +121,14 @@ static k_List_Node *GetFreeNode(k_List *self)
 static void PushBack(k_List *self, k_List_Node *node)
 {
 	node->prev = self->tail;
-	node->next = NULL;
+	node->next = null;
 
 	if (self->tail)
 		self->tail->next = node;
 
 	self->tail = node;
 
-	if (self->head == NULL)
+	if (self->head == null)
 		self->head = node;
 }
 
@@ -144,8 +143,9 @@ k_List_Node *k_List_PushBack(k_List *self)
 
 static void Release(k_List *self, k_List_Node *node)
 {
-	if (self->itemAllocator->destroy)
-		self->itemAllocator->destroy(node);
+	k_Destroy_Function dtor = self->itemAllocator->destroy;
+	if (dtor)
+		dtor(node);
 
 	node->next = self->pool;
 	self->pool = node;
@@ -153,43 +153,39 @@ static void Release(k_List *self, k_List_Node *node)
 
 void k_List_PopFront(k_List *self)
 {
-	assert(self->head != NULL);
-	if (self->head == NULL)
+	assert(self->head != null);
+	if (self->head == null)
 		return;
 
-	k_List_Node *oldHead = self->head;
 	k_List_Node *head = self->head->next;
+	Release(self, self->head);
 	if (head)
-		head->prev = NULL;
+		head->prev = null;
 
 	if (self->tail == self->head)
-		self->tail = self->head = NULL;
+		self->tail = self->head = null;
 	else
 		self->head = head;
-
-	Release(self, oldHead);
 }
 
 void k_List_PopBack(k_List *self)
 {
-	if (self->tail == NULL)
+	if (self->tail == null)
 		return;
 
-	k_List_Node *oldTail = self->tail;
 	k_List_Node *tail = self->tail->prev;
+	Release(self, self->tail);
 	if (tail)
-		tail->next = NULL;
+		tail->next = null;
 
 	if (self->tail == self->head)
-		self->tail = self->head = NULL;
+		self->tail = self->head = null;
 	else
 		self->tail = tail;
-
-	Release(self, oldTail);
 }
 
 void k_List_Iterate(k_List *list, void (*fun)(k_List_Node *))
 {
-	for (k_List_Node *node = list->head; node != NULL; node = node->next)
+	for (k_List_Node *node = list->head; node != null; node = node->next)
 		fun(node);
 }

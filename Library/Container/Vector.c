@@ -4,24 +4,30 @@
 
 #include "KAI/Container/Vector.h"
 
-static void Construct(k_Any store, k_Any args)
+static void Construct(k_Any store, k_Any itemAlloc)
 {
+	assert(itemAlloc);
+
 	k_Vector *self = (k_Vector *)store;
 	memset(self, 0, sizeof(k_Vector));
 	self->base.alloc = &k_Vector_Alloc;
-	self->elementAlloc = (k_Allocator *)args;
+	self->elementAlloc = (k_Allocator *)itemAlloc;
 }
 
-static k_Any New(k_Any args)
+static k_Any New(k_Any itemAlloc)
 {
+	assert(itemAlloc);
+
 	k_Vector *self = (k_Vector *)malloc(sizeof(k_Vector));
-	Construct(self, args);
+	Construct(self, itemAlloc);
 	self->base.allocated = true;
 	return self;
 }
 
 static void Destroy(k_Any vector)
 {
+	assert(vector);
+
 	k_Vector *v = (k_Vector *)vector;
 	k_Vector_Clear(v);
 }
@@ -48,21 +54,24 @@ void k_Vector_Destroy(k_Vector *self)
 
 static void k_Vector_DestroyElement(k_Vector *self, k_Any item)
 {
-	if (!self->elementAlloc || !self->elementAlloc->destroy)
+	const k_Allocator *alloc = self->elementAlloc;
+	if (!alloc->destroy)
 		return;
 
-	self->elementAlloc->destroy(item);
+	alloc->destroy(item);
 }
 
 void k_Vector_Clear(k_Vector *self)
 {
-	const k_Allocator *elementAlloc = self->elementAlloc;
-
-	if (elementAlloc && elementAlloc->destroy)
+	const k_Allocator *alloc = self->elementAlloc;
+	k_Destroy_Function destroy = alloc->destroy;
+	if (destroy)
 	{
 		char *item = self->data;
-		for (int n = 0; n < self->size; ++n, item += elementAlloc->elementSize)
-			elementAlloc->destroy(item);
+		size_t size = self->size;
+		size_t elementSize = alloc->elementSize;
+		for (size_t n = 0; n < size; ++n, item += elementSize)
+			destroy(item);
 	}
 
 	self->size = 0;
@@ -157,7 +166,10 @@ void k_Vector_PopBack(k_Vector *self)
 
 void k_Vector_Iterate(k_Vector *self, void (*fun)(k_Any))
 {
-	for (char *item = self->data; item < self->data + self->size; item += self->elementAlloc->elementSize)
+	size_t esize = self->elementAlloc->elementSize;
+	size_t size = self->size;
+	char *item = self->data;
+	for (int n = 0; n < size; ++n, item += esize)
 		fun(item);
 }
 

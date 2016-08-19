@@ -19,7 +19,7 @@ typedef struct k_List_t
 
 extern k_Allocator k_List_Alloc;
 
-k_List *k_List_New(size_t payloadSize);
+k_List *k_List_New(size_t elementSize);
 k_List *k_List_New2(const k_Allocator *);
 void k_List_Destroy(k_List *);
 

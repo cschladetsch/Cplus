@@ -1,0 +1,15 @@
+include KAI/Base.h
+
+namespace x
+{
+    class Bar;
+
+    class Foo
+    {
+        Bar bar;
+        int num;
+
+        int GetTwice();
+        int Add(int val);
+    }
+}

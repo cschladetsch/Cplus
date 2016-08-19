@@ -3,21 +3,20 @@
 #include <assert.h>
 #include "KAI/Container/Vector.h"
 
-static void Construct(k_Any where, k_Any args);
+static void Construct(k_Any store, k_Any args)
+{
+	k_Vector *self = (k_Vector *)store;
+	memset(self, 0, sizeof(k_Vector));
+	self->base.alloc = &k_Vector_Alloc;
+	self->elementAlloc = (k_Allocator *)args;
+}
 
 static k_Any New(k_Any args)
 {
-	k_Any store = malloc(sizeof(k_Vector));
-	Construct(store, args);
-	return store;
-}
-
-static void Construct(k_Any store, k_Any args)
-{
-	k_Vector *v = (k_Vector *)store;
-	memset(v, 0, sizeof(k_Vector));
-	v->base.alloc = &k_Vector_Alloc;
-	v->elementAlloc = (k_Allocator *)args;
+	k_Vector *self = (k_Vector *)malloc(sizeof(k_Vector));
+	Construct(self, args);
+	self->base.allocated = true;
+	return self;
 }
 
 static void Destroy(k_Any vector)
@@ -28,8 +27,7 @@ static void Destroy(k_Any vector)
 
 k_Allocator k_Vector_Alloc = { New, Construct, Destroy, sizeof(k_Vector) };
 
-
-k_Vector *k_Vector_New(int elementSize)
+k_Vector *k_Vector_New(size_t elementSize)
 {
 	return k_Vector_New2(k_GetAllocator(elementSize));
 }
@@ -69,7 +67,7 @@ void k_Vector_Clear(k_Vector *self)
 	self->size = 0;
 }
 
-int k_Vector_Size(k_Vector *self)
+size_t k_Vector_Size(k_Vector *self)
 {
 	return self->size;
 }
@@ -81,20 +79,20 @@ void k_Vector_Swap(k_Vector *a, k_Vector *b)
 	*b = tmp;
 }
 
-void k_Vector_Reserve(k_Vector *self, int newMax)
+void k_Vector_Reserve(k_Vector *self, size_t newMax)
 {
 	assert(newMax >= 0);
 	if (newMax <= self->reserved)
 		return;
 
-	int elementSize = self->elementAlloc->elementSize;
+	size_t elementSize = self->elementAlloc->elementSize;
 	k_Any data = malloc(newMax*elementSize);
 	memcpy(data, self->data, self->size*elementSize);
 	self->data = data;
 	self->reserved = newMax;
 }
 
-k_Any k_Vector_At(k_Vector *self, int index)
+k_Any k_Vector_At(k_Vector *self, size_t index)
 {
 	assert(index < self->size);
 	if (index >= self->size)

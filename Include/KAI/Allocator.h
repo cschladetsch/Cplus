@@ -11,7 +11,7 @@ typedef struct k_Allocator_t
 	k_New_Function new;
 	k_Construct_Function construct;
 	k_Destroy_Function destroy;
-	int elementSize;
+	size_t elementSize;
 } k_Allocator;
 
-k_Allocator *k_GetAllocator(int elementSize);
+k_Allocator *k_GetAllocator(size_t elementSize);

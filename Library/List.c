@@ -29,7 +29,7 @@ static k_List *NewList()
 	return (k_List *)New(0);
 }
 
-k_List *k_List_New(int size)
+k_List *k_List_New(size_t size)
 {
 	k_List *list = NewList();
 	list->elementAllocator = k_GetAllocator(size);
@@ -84,9 +84,9 @@ static k_List_Node *NewNode(k_List *self)
 	return node;
 }
 
-int k_List_Size(k_List *self)
+size_t k_List_Size(k_List *self)
 {
-	int size = 0;
+	size_t size = 0;
 	for (k_List_Node *node = self->head; node; node = node->next)
 		++size;
 

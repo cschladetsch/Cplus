@@ -20,11 +20,11 @@ typedef struct k_List_t
 
 extern k_Allocator k_List_Alloc;
 
-k_List *k_List_New(int payloadSize);
+k_List *k_List_New(size_t payloadSize);
 k_List *k_List_New2(k_Allocator *);
 void k_List_Destroy(k_List *);
 
-int k_List_Size(k_List *);
+size_t k_List_Size(k_List *);
 
 k_List_Node *k_List_PushBack(k_List *);
 k_List_Node *k_List_PushFront(k_List *);

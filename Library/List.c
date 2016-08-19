@@ -1,7 +1,8 @@
 #include <memory.h>
 #include <stdlib.h>
 #include <assert.h>
-#include <KAI/Container/Vector.h>
+
+#include "KAI/Container/Vector.h"
 #include "KAI/Container/List.h"
 
 static void Construct(k_Any where, k_Any args)
@@ -36,7 +37,7 @@ k_List *k_List_New(size_t size)
 	return list;
 }
 
-k_List *k_List_New2(k_Allocator *alloc)
+k_List *k_List_New2(const k_Allocator *alloc)
 {
 	k_List *list = NewList();
 	list->elementAllocator = alloc;
@@ -58,9 +59,7 @@ static void FreeList(k_List_Node *head, k_Destroy_Function destroy)
 
 void k_List_Destroy(k_List *self)
 {
-	k_Destroy_Function destroy = self->elementAllocator->destroy;
-
-	FreeList(self->head, destroy);
+	FreeList(self->head, self->elementAllocator->destroy);
 	FreeList(self->pool, NULL);      // items in the pool have already been destroyed
 
 	if (self->base.allocated)
@@ -69,7 +68,7 @@ void k_List_Destroy(k_List *self)
 
 static k_List_Node *NewNode(k_List *self)
 {
-	k_Allocator *elemAlloc = self->elementAllocator;
+	const k_Allocator *elemAlloc = self->elementAllocator;
 	if (elemAlloc->new)
 		return (k_List_Node *)elemAlloc->new(0);
 

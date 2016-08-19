@@ -15,3 +15,6 @@ typedef struct k_Allocator_t
 } k_Allocator;
 
 k_Allocator *k_GetAllocator(size_t elementSize);
+
+void k_Containers_Init();
+void k_Containers_Teardown();

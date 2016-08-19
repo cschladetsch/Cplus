@@ -40,7 +40,7 @@ typedef struct Pair_t
 	k_Any value;
 } Pair;
 
-k_Map *k_Map_New(k_Allocator *itemAlloc, k_Map_HashFunction hash, k_Map_HashEquivFunction equiv)
+k_Map *k_Map_New(k_Allocator *keyAlloc, k_Allocator *valueAlloc, k_Map_HashFunction hash, k_Map_HashEquivFunction equiv)
 {
 	k_Map *map = (k_Map *)New(0);
 

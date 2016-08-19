@@ -123,6 +123,9 @@ void TestList()
 	CU_ASSERT_EQUAL(list_sum, 1 + 2 + 3);
 
 	k_List_PopFront(list);
+
+	CU_ASSERT_EQUAL(k_List_Size(list), 2);
+
 	list_sum = 0;
 	k_List_Iterate(list, Sum);
 	CU_ASSERT_EQUAL(list_sum, 2 + 3);
@@ -132,8 +135,20 @@ void TestList()
 	CU_ASSERT_EQUAL(0, nodesConstructed);
 }
 
+size_t HashInt(int *p)
+{
+	int n = *p;
+	return (size_t)(n < 0 ? -n : n);
+}
+
+bool EquivInt(int *pa, int *pb)
+{
+	return *pa == *pb;
+}
+
 void TestMap()
 {
+//	k_Map *map = k_Map_New(k_GetAllocator(sizeof(int)), k_GetAllocator(sizeof(char *)), HashInt, EquivInt);
 }
 
 int main()

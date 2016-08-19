@@ -12,8 +12,7 @@ typedef struct k_List_Node_t
 typedef struct k_List_t
 {
 	k_Base base;
-	k_Allocator *elementAllocator;
-	k_List_Node sentinel;
+	const k_Allocator *elementAllocator;
 	k_List_Node *head, *tail;
 	k_List_Node *pool;
 } k_List;
@@ -21,7 +20,7 @@ typedef struct k_List_t
 extern k_Allocator k_List_Alloc;
 
 k_List *k_List_New(size_t payloadSize);
-k_List *k_List_New2(k_Allocator *);
+k_List *k_List_New2(const k_Allocator *);
 void k_List_Destroy(k_List *);
 
 size_t k_List_Size(k_List *);

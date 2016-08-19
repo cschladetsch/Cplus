@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <memory.h>
 #include <assert.h>
+
 #include "KAI/Container/Vector.h"
 
 static void Construct(k_Any store, k_Any args)
@@ -32,9 +33,9 @@ k_Vector *k_Vector_New(size_t elementSize)
 	return k_Vector_New2(k_GetAllocator(elementSize));
 }
 
-k_Vector *k_Vector_New2(k_Allocator *elementAllocator)
+k_Vector *k_Vector_New2(const k_Allocator *elementAllocator)
 {
-	return (k_Vector *)k_Vector_Alloc.new(elementAllocator);
+	return (k_Vector *)k_Vector_Alloc.new((k_Any)elementAllocator);
 }
 
 void k_Vector_Destroy(k_Vector *self)
@@ -129,7 +130,7 @@ k_Any k_Vector_Front(k_Vector *self)
 	return self->data;
 }
 
-int k_Max_int(int a, int b)
+size_t k_Max_size_t(size_t a, size_t b)
 {
 	return a > b ? a : b;
 }
@@ -137,9 +138,9 @@ int k_Max_int(int a, int b)
 void k_Vector_PushBack(k_Vector *self, k_Any element)
 {
 	if (self->size == self->reserved)
-		k_Vector_Reserve(self, k_Max_int(8, self->size*2));
+		k_Vector_Reserve(self, k_Max_size_t(8, self->size*2));
 
-	int elemSize = self->elementAlloc->elementSize;
+	size_t elemSize = self->elementAlloc->elementSize;
 	memcpy(k_Vector_End(self), element, elemSize);
 	self->size++;
 }

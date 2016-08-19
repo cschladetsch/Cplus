@@ -6,6 +6,7 @@ void TestList();
 void TestMap();
 
 void TestFoo();
+void TestFoo_Local();
 
 int Start()
 {
@@ -34,6 +35,7 @@ int main()
 	CU_add_test(suite, "TestMap", TestMap);
 
 	CU_add_test(suite, "TestFoo", TestFoo);
+	CU_add_test(suite, "TestFoo_Local", TestFoo_Local);
 
 	CU_basic_run_tests();
 

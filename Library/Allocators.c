@@ -18,6 +18,7 @@ void k_Containers_Init()
 void k_Containers_Teardown()
 {
 	k_Vector_Destroy(k_allocators);
+	free((k_Allocator *)k_allocators->itemAlloc);
 	k_allocators = null;
 }
 

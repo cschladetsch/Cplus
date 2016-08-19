@@ -17,4 +17,5 @@ typedef struct k_Class_t
 	k_Destroy_Function destroy;
 	k_Pool *pool;
 } k_Class;
+
 extern k_Allocator k_Class_Alloc;

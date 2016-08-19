@@ -11,13 +11,17 @@ typedef struct k_Object_t
 	k_InstanceNumber instanceNumber;
 	bool isValue;
 } k_Object;
+
 extern k_Allocator k_Object_Alloc;
 
 k_Value *k_Object_Deref(k_Object *);
 
 void k_Object_Assign(k_Object *lhs, k_Object *rhs);
+
 k_Object *k_Object_Duplicate(k_Object *);
+
 k_String *k_Object_ToString(k_Object *);
+
 void k_Object_Insert(k_Object *, k_StringStream *);
 void k_Object_Extract(k_Object *, k_StringStream *);
 

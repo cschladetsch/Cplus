@@ -56,7 +56,7 @@ static void k_Vector_DestroyElement(k_Vector *self, k_Any item)
 
 void k_Vector_Clear(k_Vector *self)
 {
-	k_Allocator *elementAlloc = self->elementAlloc;
+	const k_Allocator *elementAlloc = self->elementAlloc;
 
 	if (elementAlloc && elementAlloc->destroy)
 	{

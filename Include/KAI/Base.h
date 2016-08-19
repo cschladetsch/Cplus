@@ -1,6 +1,10 @@
 #pragma once
 
-#include "ForwardDeclarations.h"
+#include <stddef.h>
+#include <stdbool.h>
+
+#include "KAI/Config.h"
+#include "KAI/ForwardDeclarations.h"
 #include "KAI/Allocator.h"
 #include "KAI/TypeNumber.h"
 

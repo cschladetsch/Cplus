@@ -2,15 +2,22 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Library/Function.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Library/List.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Library/Vector.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Library/Map.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Library/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Library/Allocators.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/Container/Vector.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/Container/List.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/Container/Map.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/Function.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/CodeGen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Test/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Include" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/TestClassBuilder.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Foo/Foo.Generated.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Foo/TestFoo.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Foo/Foo.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/main.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/TestContainers.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

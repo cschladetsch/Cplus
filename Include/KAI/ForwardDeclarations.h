@@ -2,6 +2,10 @@
 
 #include "Config.h"
 
+typedef struct k_Vector_t k_Vector;
+typedef struct k_List_t k_List;
+typedef struct k_Map_t k_Map;
+
 typedef struct k_Function_t k_Function;
 typedef struct k_Property_t k_Property;
 typedef struct k_Pool_t k_Pool;

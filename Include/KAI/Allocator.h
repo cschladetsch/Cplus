@@ -3,8 +3,7 @@
 #include "ForwardDeclarations.h"
 
 typedef k_Any (*k_New_Function)(k_Any args);
-typedef void (*k_Construct_Function)(k_Any where);
-typedef void (*k_Construct_Function2)(k_Any where, k_Any args);
+typedef void (*k_Construct_Function)(k_Any where, k_Any args);
 typedef void (*k_Destroy_Function)(k_Any);
 
 typedef struct k_Allocator_t
@@ -14,3 +13,5 @@ typedef struct k_Allocator_t
 	k_Destroy_Function destroy;
 	int elementSize;
 } k_Allocator;
+
+k_Allocator *k_GetAllocator(int elementSize);

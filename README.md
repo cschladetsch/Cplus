@@ -13,10 +13,9 @@ Goals and contents of this library:
 
 To this end, the library:
 
-* Provide a well-tested and performatn set of common containers like Vector, List and Map.
-* Include tracing memory model.
+* Provides a well-tested and performant set of common containers like Vector, List and Map.
+* Includes tracing memory model.
 * Adds C++-based IDL to generate boiler-plate C code, to make a simpler `C with classes`.
-* 
 
 The end-goal is to provide a basis for an IoT infrastructure that we can all use with
 ease and confidence.

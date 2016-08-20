@@ -17,6 +17,5 @@ To this end, the library:
 * Includes tracing memory model.
 * Adds C++-based IDL to generate boiler-plate C code, to make a simpler `C with classes`.
 
-The end-goal is to provide a basis for an IoT infrastructure that we can all use with
-ease and confidence.
+
 

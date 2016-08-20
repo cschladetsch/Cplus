@@ -1,8 +1,7 @@
 #pragma once
 
-#include "KAI/Registry.h"
+#include "KAI/Base.h"
 
-// Object.h
 typedef struct k_Object_t
 {
 	k_Base base;

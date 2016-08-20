@@ -29,7 +29,7 @@ k_Vector *k_Vector_New2(const k_Allocator *elementAllocator);
 void k_Vector_Construct(k_Vector *, size_t elementSize);
 void k_Vector_Construct2(k_Vector *, const k_Allocator *elementAllocator);
 
-// Destroy a Vector in-place, and free it if it is on the heap
+// Destroy a Vector in-place, and k_Free it if it is on the heap
 // O(N)
 void k_Vector_Destroy(k_Vector *);
 

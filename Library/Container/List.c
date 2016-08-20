@@ -12,7 +12,7 @@ static void Construct(k_Any where, k_Any args)
 
 static k_Any New(k_Any args)
 {
-	k_List *list = (k_List *)malloc(sizeof(k_List));
+	k_List *list = (k_List *)k_Malloc(sizeof(k_List));
 	Construct(list, args);
 	list->base.allocated = true;
 	return list;
@@ -52,7 +52,7 @@ static void FreeList(k_List_Node *head, k_Destroy_Function destroy)
 		if (destroy)
 			destroy(node);
 
-		free(node);
+		k_Free(node);
 		node = next;
 	}
 }
@@ -63,7 +63,7 @@ void k_List_Destroy(k_List *self)
 	FreeList(self->pool, null);      // items in the pool have already been destroyed
 
 	if (self->base.allocated)
-		free(self);
+		k_Free(self);
 }
 
 static k_List_Node *NewNode(k_List *self)
@@ -72,7 +72,7 @@ static k_List_Node *NewNode(k_List *self)
 	if (elemAlloc->new)
 		return (k_List_Node *)elemAlloc->new(0);
 
-	k_List_Node *node = (k_List_Node *)malloc(elemAlloc->size);
+	k_List_Node *node = (k_List_Node *)k_Malloc(elemAlloc->size);
 	if (elemAlloc->construct)
 	{
 		elemAlloc->construct(node, self);

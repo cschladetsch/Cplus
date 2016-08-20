@@ -7,9 +7,9 @@ static k_Vector *k_allocators;
 
 void k_Containers_Init()
 {
-	k_allocators = (k_Vector *)malloc(sizeof(k_Vector));
+	k_allocators = (k_Vector *)k_Malloc(sizeof(k_Vector));
 	memset(k_allocators, 0, sizeof(k_Vector));
-	k_Allocator *elemAlloc = (k_Allocator *)malloc(sizeof(k_Allocator));
+	k_Allocator *elemAlloc = (k_Allocator *)k_Malloc(sizeof(k_Allocator));
 	memset(elemAlloc, 0, sizeof(k_Allocator));
 	elemAlloc->size = sizeof(k_Allocator *);
 	k_allocators->itemAlloc = elemAlloc;
@@ -18,7 +18,7 @@ void k_Containers_Init()
 void k_Containers_Teardown()
 {
 	k_Vector_Destroy(k_allocators);
-	free((k_Allocator *)k_allocators->itemAlloc);
+	k_Free((k_Allocator *)k_allocators->itemAlloc);
 	k_allocators = null;
 }
 
@@ -31,7 +31,7 @@ k_Allocator *k_GetAllocator(size_t elementSize)
 			return alloc;
 	}
 
-	k_Allocator *allocator = (k_Allocator *)malloc(sizeof(k_Allocator));
+	k_Allocator *allocator = (k_Allocator *)k_Malloc(sizeof(k_Allocator));
 	memset(allocator, 0, sizeof(k_Allocator));
 	allocator->size = elementSize;
 	k_Vector_PushBack(k_allocators, allocator);

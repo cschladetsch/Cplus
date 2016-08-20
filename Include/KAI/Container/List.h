@@ -2,20 +2,22 @@
 
 #include "KAI/Base.h"
 
-// A generic node in a List
+// A generic node in a doubly-linked List
 typedef struct k_List_Node_t
 {
 	struct k_List_Node_t *next, *prev;
-} k_List_Node;
+}
+k_List_Node;
 
-// A generic list.
+// A generic doubly linked list.
 typedef struct k_List_t
 {
 	k_Base base;
 	const k_Allocator *itemAllocator;
 	k_List_Node *head, *tail;
 	k_List_Node *pool;
-} k_List;
+}
+k_List;
 
 extern k_Allocator k_List_Alloc;
 

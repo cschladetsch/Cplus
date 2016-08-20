@@ -19,7 +19,7 @@ void Construct(k_Any where, k_Any args)
 
 k_Any New(k_Any args)
 {
-	x_Foo *self = (x_Foo *)malloc(sizeof(x_Foo));
+	x_Foo *self = (x_Foo *)k_Malloc(sizeof(x_Foo));
 	Construct(self, args);
 	self->base.allocated = true;
 	return self;
@@ -30,7 +30,7 @@ void Destroy(k_Any where)
 	x_Foo *self = (x_Foo *)where;
 	x_Foo_Destroy(self);
 	if (self->base.allocated)
-		free(self);
+		k_Free(self);
 }
 
 k_Allocator x_Foo_Alloc = { New, Construct, Destroy, sizeof(x_Foo) };

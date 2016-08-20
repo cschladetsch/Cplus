@@ -5,6 +5,7 @@
 
 #include "KAI/Config.h"
 #include "KAI/ForwardDeclarations.h"
+#include "KAI/Memory.h"
 #include "KAI/Allocator.h"
 #include "KAI/TypeNumber.h"
 

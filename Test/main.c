@@ -8,6 +8,8 @@ void TestMap();
 void TestFoo();
 void TestFoo_Local();
 
+void TestString();
+
 int Start()
 {
 	k_Containers_Init();
@@ -36,6 +38,8 @@ int main()
 
 	CU_add_test(suite, "TestFoo", TestFoo);
 	CU_add_test(suite, "TestFoo_Local", TestFoo_Local);
+
+	CU_add_test(suite, "TestString", TestString);
 
 	CU_basic_run_tests();
 

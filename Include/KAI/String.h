@@ -2,20 +2,11 @@
 
 #include "KAI/Base.h"
 #include "KAI/Container/Vector.h"
-
-typedef struct k_String_Slice_t
-{
-	const char *start;
-	const char *end;
-} k_String_Slice;
-
-void k_String_Slice_Construct(k_String_Slice *, const char *, const char *);
-size_t k_String_Slice_Length(const k_String_Slice *);
+#include "KAI/String_Slice.h"
 
 typedef struct k_String_t
 {
 	k_Base base;
-	size_t length;
 	k_Vector str;
 } k_String;
 
@@ -25,9 +16,9 @@ k_String *k_String_New();
 k_String *k_String_New2(const char *);
 k_String *k_String_New3(const k_Allocator *);
 
-k_String k_String_Construct(k_String *);
-k_String k_String_Construct2(k_String *, const char *);
-k_String k_String_Construct3(k_String *, const k_Allocator *);
+void k_String_Construct(k_String *);
+void k_String_Construct2(k_String *, const char *);
+void k_String_Construct3(k_String *, const k_Allocator *);
 
 void k_String_Destroy(k_String *);
 

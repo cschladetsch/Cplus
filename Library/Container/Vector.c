@@ -18,7 +18,7 @@ static k_Any New(k_Any itemAlloc)
 {
 	assert(itemAlloc);
 
-	k_Vector *self = (k_Vector *)malloc(sizeof(k_Vector));
+	k_Vector *self = (k_Vector *)k_Malloc(sizeof(k_Vector));
 	Construct(self, itemAlloc);
 	self->base.allocated = true;
 	return self;
@@ -47,7 +47,7 @@ k_Vector *k_Vector_New2(const k_Allocator *elementAllocator)
 void k_Vector_Destroy(k_Vector *self)
 {
 	k_Vector_Clear(self);
-	free(self->data);
+	k_Free(self->data);
 	self->data = null;
 	self->size = 0;
 }
@@ -96,7 +96,7 @@ void k_Vector_Reserve(k_Vector *self, size_t newMax)
 		return;
 
 	size_t elementSize = self->itemAlloc->size;
-	k_Any data = malloc(newMax*elementSize);
+	k_Any data = k_Malloc(newMax*elementSize);
 	memcpy(data, self->data, self->size*elementSize);
 	self->data = data;
 	self->reserved = newMax;

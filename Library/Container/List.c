@@ -12,7 +12,7 @@ static void Construct(k_Any where, k_Any args)
 
 static k_Any New(k_Any args)
 {
-	k_List *list = (k_List *)k_Malloc(sizeof(k_List));
+	k_List *list = (k_List *)k_MallocRaw(sizeof(k_List));
 	Construct(list, args);
 	list->base.allocated = true;
 	return list;
@@ -44,6 +44,7 @@ k_List *k_List_New2(const k_Allocator *alloc)
 	return list;
 }
 
+// TODO: not have two de-allocations for a node!
 static void FreeList(k_List_Node *head, k_Destroy_Function destroy)
 {
 	for (k_List_Node *node = head; node != null; )
@@ -66,6 +67,7 @@ void k_List_Destroy(k_List *self)
 		k_Free(self);
 }
 
+// TODO: not have two allocations for a node!
 static k_List_Node *NewNode(k_List *self)
 {
 	const k_Allocator *elemAlloc = self->itemAllocator;

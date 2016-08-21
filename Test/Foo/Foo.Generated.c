@@ -19,7 +19,7 @@ void Construct(k_Any where, k_Any args)
 
 k_Any New(k_Any args)
 {
-	x_Foo *self = (x_Foo *)k_Malloc(sizeof(x_Foo));
+	x_Foo *self = (x_Foo *)k_MallocRaw(sizeof(x_Foo));
 	Construct(self, args);
 	self->base.allocated = true;
 	return self;

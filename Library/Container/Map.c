@@ -20,7 +20,7 @@ static void Construct(k_Any where, k_Any args)
 
 static k_Any New(k_Any args)
 {
-	k_Map *map = k_Malloc(sizeof(k_Map));
+	k_Map *map = k_MallocRaw(sizeof(k_Map));
 	Construct(map, args);
 	map->base.allocated = true;
 	return map;

@@ -18,7 +18,7 @@ static k_Any New(k_Any itemAlloc)
 {
 	assert(itemAlloc);
 
-	k_Vector *self = (k_Vector *)k_Malloc(sizeof(k_Vector));
+	k_Vector *self = (k_Vector *)k_MallocRaw(sizeof(k_Vector));
 	Construct(self, itemAlloc);
 	self->base.allocated = true;
 	return self;
@@ -52,7 +52,7 @@ void k_Vector_Destroy(k_Vector *self)
 	self->size = 0;
 }
 
-static void k_Vector_DestroyElement(k_Vector *self, k_Any item)
+static void DestroyElement(k_Vector *self, k_Any item)
 {
 	const k_Allocator *alloc = self->itemAlloc;
 	if (!alloc->destroy)
@@ -160,7 +160,7 @@ void k_Vector_PopBack(k_Vector *self)
 	if (self->size == 0)
 		return;
 
-	k_Vector_DestroyElement(self, k_Vector_Back(self));
+	DestroyElement(self, k_Vector_Back(self));
 	self->size--;
 }
 

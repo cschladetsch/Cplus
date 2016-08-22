@@ -6,8 +6,6 @@
 
 static void Construct(k_Any store, k_Any itemAlloc)
 {
-	assert(itemAlloc);
-
 	k_Vector *self = (k_Vector *)store;
 	memset(self, 0, sizeof(k_Vector));
 	self->base.alloc = &k_Vector_Alloc;
@@ -16,8 +14,6 @@ static void Construct(k_Any store, k_Any itemAlloc)
 
 static k_Any New(k_Any itemAlloc)
 {
-	assert(itemAlloc);
-
 	k_Vector *self = (k_Vector *)k_MallocRaw(sizeof(k_Vector));
 	Construct(self, itemAlloc);
 	self->base.allocated = true;
@@ -48,8 +44,9 @@ void k_Vector_Destroy(k_Vector *self)
 {
 	k_Vector_Clear(self);
 	k_Free(self->data);
-	self->data = null;
-	self->size = 0;
+
+	if (self->base.allocated)
+		k_Free(self);
 }
 
 static void DestroyElement(k_Vector *self, k_Any item)
@@ -91,7 +88,6 @@ void k_Vector_Swap(k_Vector *a, k_Vector *b)
 
 void k_Vector_Reserve(k_Vector *self, size_t newMax)
 {
-	assert(newMax >= 0);
 	if (newMax <= self->reserved)
 		return;
 
@@ -147,7 +143,7 @@ size_t k_Max_size_t(size_t a, size_t b)
 void k_Vector_PushBack(k_Vector *self, k_Any element)
 {
 	if (self->size == self->reserved)
-		k_Vector_Reserve(self, k_Max_size_t(8, self->size*2));
+		k_Vector_Reserve(self, k_Max_size_t(8, self->size * 2));
 
 	size_t elemSize = self->itemAlloc->size;
 	memcpy(k_Vector_End(self), element, elemSize);

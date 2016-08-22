@@ -105,26 +105,24 @@ bool k_List_Empty(k_List *self)
 	return self->head == null;
 }
 
+// Get a node: either by buying a new one from allocator, or from
+// list of previously released nodes stored in self->pool.
 static k_List_Node *GetNode(k_List *self)
 {
-	k_List_Node *node = 0;
+	if (self->pool == null)
+		return NewNode(self);
 
-	if (self->pool != null)
-	{
-		node = self->pool;
-		self->pool = node->next;
+	k_List_Node *node = self->pool;
+	self->pool = node->next;
 
-		k_Construct_Function construct = self->itemAllocator->construct;
-		if (construct)
-			construct(node, self);
+	k_Construct_Function construct = self->itemAllocator->construct;
+	if (construct)
+		construct(node, self);
 
-		return node;
-	}
-
-	return NewNode(self);
+	return node;
 }
 
-static void PushBack(k_List *self, k_List_Node *node)
+static k_List_Node *PushBack(k_List *self, k_List_Node *node)
 {
 	node->prev = self->tail;
 	node->next = null;
@@ -136,15 +134,13 @@ static void PushBack(k_List *self, k_List_Node *node)
 
 	if (self->head == null)
 		self->head = node;
+
+	return node;
 }
 
 k_List_Node *k_List_PushBack(k_List *self)
 {
-	k_List_Node *node = GetNode(self);
-
-	PushBack(self, node);
-
-	return node;
+	return PushBack(self, GetNode(self));
 }
 
 static void Release(k_List *self, k_List_Node *node)

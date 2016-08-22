@@ -40,19 +40,14 @@ k_Vector *k_Vector_New2(const k_Allocator *elementAllocator)
 void k_Vector_Destroy(k_Vector *self)
 {
 	k_Vector_Clear(self);
-	self->itemAlloc->free(self->data);
-
-	if (self->base.allocated)
-		self->base.alloc->free(self);
+	self->base.alloc->free(self);
 }
 
 static void DestroyElement(k_Vector *self, k_Any item)
 {
-	const k_Allocator *alloc = self->itemAlloc;
-	if (!alloc->destroy)
-		return;
-
-	alloc->destroy(item);
+	k_Destroy_Function destroy = self->itemAlloc->destroy;
+	if (destroy)
+		destroy(item);
 }
 
 void k_Vector_Clear(k_Vector *self)

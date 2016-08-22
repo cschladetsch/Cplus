@@ -40,7 +40,7 @@ void Sum(k_Any load)
 
 void TestList()
 {
-	k_Allocator alloc = { null, ConstructMyNode, DestroyMyNode, sizeof(int) };
+	k_Allocator alloc = { null, ConstructMyNode, DestroyMyNode, 0, 0, sizeof(int) };
 	k_List *list = k_List_New2(&alloc);
 
 	for (int n = 0; n < 4; ++n)

@@ -1,3 +1,4 @@
+#include "KAI/Base.h"
 #include "KAI/Memory/StackAllocator.h"
 
 static void Construct(k_Any self, k_Any args)

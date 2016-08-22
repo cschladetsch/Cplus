@@ -33,7 +33,7 @@ void Destroy(k_Any where)
 		k_Free(self);
 }
 
-k_Allocator x_Foo_Alloc = { New, Construct, Destroy, sizeof(x_Foo) };
+k_Allocator x_Foo_Alloc = { New, Construct, Destroy, 0, 0, sizeof(x_Foo) };
 
 x_Foo *x_Foo_New()
 {

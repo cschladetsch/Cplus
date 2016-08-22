@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Library/Container/Vector.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Library/Container/List.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Library/Container/Map.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/StackAllocator.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Library/Function.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Library/String.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Library/Memory.c" isTestSource="false" />
@@ -15,10 +16,12 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Include" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/TestClassBuilder.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/main.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestVector.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestMap.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestList.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Test/main.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Memory/TestStackAllocator.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Memory/TestAllocator.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/TestString.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Generator/Foo/Foo.Generated.c" isTestSource="false" />

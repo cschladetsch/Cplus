@@ -92,7 +92,11 @@ void k_Vector_Iterate(k_Vector *, void (*fun)(k_Any));
 
 bool k_Vector_Equiv(k_Vector *, k_Vector *, bool (*)(k_Any, k_Any));
 
-// Sort items in the Vector
+// Sort items in the Vector assuming they are PODs
 // O(log(N))
-void k_Vector_Sort(k_Vector *, int (*compare)(const void *, const void *));
+void k_Vector_SortPOD(k_Vector *, int (*compare)(const void *, const void *));
+
+// Sort items in the vector given traits
+// O(log(N))
+void k_Vector_Sort(k_Vector *, k_Traits *, int (*compare)(const void *, const void *));
 

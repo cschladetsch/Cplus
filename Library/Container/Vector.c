@@ -6,8 +6,6 @@
 
 static void Construct(k_Any store, k_Any itemAlloc)
 {
-	assert(itemAlloc);
-
 	k_Vector *self = (k_Vector *)store;
 	memset(self, 0, sizeof(k_Vector));
 	self->base.alloc = &k_Vector_Alloc;
@@ -16,8 +14,6 @@ static void Construct(k_Any store, k_Any itemAlloc)
 
 static k_Any New(k_Any itemAlloc)
 {
-	assert(itemAlloc);
-
 	k_Vector *self = (k_Vector *)k_MallocRaw(sizeof(k_Vector));
 	Construct(self, itemAlloc);
 	self->base.allocated = true;
@@ -26,10 +22,7 @@ static k_Any New(k_Any itemAlloc)
 
 static void Destroy(k_Any vector)
 {
-	assert(vector);
-
-	k_Vector *v = (k_Vector *)vector;
-	k_Vector_Clear(v);
+	k_Vector_Clear((k_Vector *)vector);
 }
 
 k_Allocator k_Vector_Alloc = { New, Construct, Destroy, sizeof(k_Vector) };
@@ -41,15 +34,16 @@ k_Vector *k_Vector_New(size_t elementSize)
 
 k_Vector *k_Vector_New2(const k_Allocator *elementAllocator)
 {
-	return (k_Vector *)k_Vector_Alloc.new((k_Any)elementAllocator);
+	return (k_Vector *)New((k_Any)elementAllocator);
 }
 
 void k_Vector_Destroy(k_Vector *self)
 {
 	k_Vector_Clear(self);
 	k_Free(self->data);
-	self->data = null;
-	self->size = 0;
+
+	if (self->base.allocated)
+		k_Free(self);
 }
 
 static void DestroyElement(k_Vector *self, k_Any item)
@@ -91,12 +85,11 @@ void k_Vector_Swap(k_Vector *a, k_Vector *b)
 
 void k_Vector_Reserve(k_Vector *self, size_t newMax)
 {
-	assert(newMax >= 0);
 	if (newMax <= self->reserved)
 		return;
 
 	size_t elementSize = self->itemAlloc->size;
-	k_Any data = k_Malloc(newMax*elementSize);
+	k_Any data = k_MallocRaw(newMax*elementSize);
 	memcpy(data, self->data, self->size*elementSize);
 	self->data = data;
 	self->reserved = newMax;
@@ -147,7 +140,7 @@ size_t k_Max_size_t(size_t a, size_t b)
 void k_Vector_PushBack(k_Vector *self, k_Any element)
 {
 	if (self->size == self->reserved)
-		k_Vector_Reserve(self, k_Max_size_t(8, self->size*2));
+		k_Vector_Reserve(self, k_Max_size_t(8, self->size * 2));
 
 	size_t elemSize = self->itemAlloc->size;
 	memcpy(k_Vector_End(self), element, elemSize);
@@ -173,7 +166,7 @@ void k_Vector_Iterate(k_Vector *self, void (*fun)(k_Any))
 		fun(item);
 }
 
-void k_Vector_Sort(k_Vector *self, int (*compare)(const void *, const void *))
+void k_Vector_SortPOD(k_Vector *self, int (*compare)(const void *, const void *))
 {
 	qsort(self->data, self->size, self->itemAlloc->size, compare);
 }

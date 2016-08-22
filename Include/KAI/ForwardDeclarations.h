@@ -11,6 +11,7 @@ typedef struct k_Property_t k_Property;
 typedef struct k_Pool_t k_Pool;
 typedef struct k_Class_t k_Class;
 
+typedef struct k_Traits_t k_Traits;
 typedef struct k_Object_t k_Object;
 typedef struct k_Value_t k_Value;
 typedef struct k_String_t k_String;

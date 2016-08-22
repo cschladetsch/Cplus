@@ -24,7 +24,7 @@ static void Destroy(k_Any where)
 	k_List_Destroy((k_List *)where);
 }
 
-const k_Allocator k_List_Alloc = { New, Construct, Destroy, sizeof(k_List) };
+const k_Allocator k_List_Alloc = { New, Construct, Destroy, 0, sizeof(k_List) };
 
 static k_List *NewList()
 {
@@ -51,8 +51,7 @@ void k_List_Destroy(k_List *self)
 	k_List_Trim(self);
 
 	if (self->base.allocated)
-		// TODO: use allocator to free resources
-		k_Free(self);
+		self->base.alloc->free(self);
 }
 
 void k_List_Clear(k_List *self)
@@ -65,7 +64,6 @@ void k_List_Trim(k_List *self)
 	for (k_List_Node *node = self->pool; node; /* nop */)
 	{
 		k_List_Node *next = node->next;
-		// TODO: use allocator to free resources
 		k_Free(node);
 		node = next;
 	}

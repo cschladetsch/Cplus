@@ -76,7 +76,8 @@ void k_List_EraseRange(k_List *self, k_List_Node *node, k_List_Node *end)
 		node->next = self->pool;
 		self->pool = node;
 
-		destroy(node->payload);
+		if (destroy)
+			destroy(node->payload);
 
 		node = next;
 	}

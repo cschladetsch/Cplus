@@ -17,7 +17,9 @@ k_String *k_String_New2(const char *);
 k_String *k_String_New3(const k_Allocator *);
 
 void k_String_Construct(k_String *);
-void k_String_Construct2(k_String *, const char *);
+void k_String_ConstructAlloc(k_String *, k_Allocator *);
+void k_String_ConstructCstr(k_String *, const char *);
+void k_String_ConstructCstrAlloc(k_String *, k_Allocator *alloc, const char *);
 void k_String_Construct3(k_String *, const k_Allocator *);
 
 void k_String_Destroy(k_String *);
@@ -25,7 +27,8 @@ void k_String_Destroy(k_String *);
 size_t k_String_Length(const k_String *);
 const char *k_String_Chars(const k_String *);
 
-void k_String_Concat(k_String *, const char *);
+void k_String_Concat(k_String *result, const k_String *, const k_String *);
+void k_String_ConcatCstr(k_String *result, const k_String *, const char *);
 void k_String_Append(k_String *, char);
 
 bool k_String_Equiv(const k_String *, const k_String *);

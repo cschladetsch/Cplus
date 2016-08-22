@@ -56,17 +56,23 @@ void k_List_Trim(k_List *);
 size_t k_List_Size(k_List *);
 
 // Add a node to end of list, returning it.
+// O(1)
 k_List_Node *k_List_PushBack(k_List *);
 
 // Add a node to start of list, returning it.
+// O(1)
 k_List_Node *k_List_PushFront(k_List *);
 
 // Remove the first node in the list
+// O(1)
 void k_List_PopFront(k_List *);
 
 // Remove the last node in the list
+// O(1)
 void k_List_PopBack(k_List *);
 
-// Iterate through all nodes in the list
+// Iterate through all nodes in the list. The callback is
+// passed a pointer to the payload of each node.
+// O(N)
 void k_List_Iterate(k_List *, void (*)(k_Any));
 

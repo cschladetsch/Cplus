@@ -1,6 +1,6 @@
 #pragma once
 
-#include "KAI/Base.h"
+#include "KAI/ForwardDeclarations.h"
 
 // Allocate without zeroing
 k_Any k_MallocRaw(size_t size);

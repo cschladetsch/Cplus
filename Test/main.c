@@ -1,5 +1,5 @@
 #include <CUnit/Basic.h>
-#include "KAI/Allocator.h"
+#include "KAI/Memory/Allocator.h"
 
 void TestVector();
 void TestList();
@@ -16,7 +16,7 @@ int Start()
 
 int End()
 {
-	k_Containers_Teardown();
+	k_Containers_TearDown();
 	return 0;
 }
 

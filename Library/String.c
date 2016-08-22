@@ -64,7 +64,7 @@ const char *k_String_Chars(const k_String *self)
 	return null;
 }
 
-void k_String_Concat(k_String *self, const char *str)
+void k_String_Concat(k_String *result, const k_String *left, const k_String *right)
 {
 }
 

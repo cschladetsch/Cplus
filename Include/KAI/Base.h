@@ -1,13 +1,10 @@
 #pragma once
 
-#include <stddef.h>
-#include <stdbool.h>
-
 #include "KAI/Config.h"
 #include "KAI/ForwardDeclarations.h"
-#include "KAI/Memory.h"
-#include "KAI/Allocator.h"
-#include "KAI/TypeNumber.h"
+#include "KAI/Memory/Memory.h"
+#include "KAI/Memory/Allocator.h"
+#include "KAI/Type/TypeNumber.h"
 
 // Common to all system types.
 typedef struct k_Base_t

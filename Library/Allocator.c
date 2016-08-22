@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <memory.h>
-#include "KAI/Allocator.h"
+#include "KAI/Memory/Allocator.h"
 #include "KAI/Container/Vector.h"
 
 static k_Vector *k_allocators;
@@ -13,7 +13,7 @@ void k_Containers_Init()
 	k_allocators->itemAlloc = elemAlloc;
 }
 
-void k_Containers_Teardown()
+void k_Containers_TearDown()
 {
 	k_Vector_Destroy(k_allocators);
 	k_Free((k_Allocator *)k_allocators->itemAlloc);
@@ -35,4 +35,5 @@ k_Allocator *k_GetAllocator(size_t elementSize)
 
 	return allocator;
 }
+
 

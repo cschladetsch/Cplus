@@ -1,7 +1,7 @@
 #pragma once
 
 #include "KAI/Base.h"
-#include "KAI/TypeNumber.h"
+#include "KAI/Type/TypeNumber.h"
 #include "KAI/Container/Vector.h"
 
 // Class.h

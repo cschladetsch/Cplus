@@ -1,8 +1,8 @@
 #include <memory.h>
 #include <assert.h>
 
-#include "KAI/Container/Vector.h"
-#include "KAI/Container/List.h"
+#include "Cplus/Container/Vector.h"
+#include "Cplus/Container/List.h"
 
 static void Release(k_List *self, k_List_Node *node);
 
@@ -161,7 +161,7 @@ static void Release(k_List *self, k_List_Node *node)
 
 void k_List_PopFront(k_List *self)
 {
-	assert(self->head != null);
+	k_Assert(self->head != null);
 	if (self->head == null)
 		return;
 
@@ -190,6 +190,26 @@ void k_List_PopBack(k_List *self)
 		self->tail = self->head = null;
 	else
 		self->tail = tail;
+}
+
+void k_List_Erase(k_List *self, k_List_Node *node)
+{
+	k_Assert(node && self);
+	k_List_Node *next = node->next, *prev = node->prev;
+	if (prev)
+		prev->next = next;
+	if (next)
+		next->prev = prev;
+
+	if (node == self->head)
+		self->head = self->tail = null;
+
+	k_Destroy_Function destroy = self->itemAllocator->destroy;
+	if (destroy)
+		destroy(node->payload);
+
+	node->next = self->pool;
+	self->pool = node;
 }
 
 void k_List_Iterate(k_List *list, void (*fun)(k_Any))

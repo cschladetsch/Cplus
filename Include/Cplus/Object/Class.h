@@ -1,8 +1,8 @@
 #pragma once
 
-#include "KAI/Base.h"
-#include "KAI/Type/TypeNumber.h"
-#include "KAI/Container/Vector.h"
+#include "Cplus/Base.h"
+#include "Cplus/Type/TypeNumber.h"
+#include "Cplus/Container/Vector.h"
 
 // Class.h
 typedef struct k_Class_t

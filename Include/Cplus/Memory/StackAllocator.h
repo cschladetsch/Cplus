@@ -1,7 +1,7 @@
 #pragma once
 
-#include "KAI/ForwardDeclarations.h"
-#include "KAI/Memory/Allocator.h"
+#include "Cplus/ForwardDeclarations.h"
+#include "Cplus/Memory/Allocator.h"
 
 typedef struct k_StackAllocator_t
 {

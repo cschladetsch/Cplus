@@ -1,5 +1,5 @@
-#include "KAI/Memory/Allocator.h"
-#include "KAI/Memory/StackAllocator.h"
+#include "Cplus/Memory/Allocator.h"
+#include "Cplus/Memory/StackAllocator.h"
 
 void TestAllocator()
 {

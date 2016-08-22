@@ -1,7 +1,7 @@
 #pragma once
 
-#include "KAI/Memory/Config.h"
-#include "KAI/Memory/Memory.h"
+#include "Cplus/Memory/Config.h"
+#include "Cplus/Memory/Memory.h"
 
 // Allocate a new item
 typedef k_Any (*k_New_Function)(k_Any args);

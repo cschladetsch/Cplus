@@ -1,6 +1,6 @@
 #pragma once
 
-#include "KAI/Object.h"
+#include "Object.h"
 
 typedef struct k_Value_t
 {

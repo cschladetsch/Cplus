@@ -1,7 +1,7 @@
 #include <CUnit/Basic.h>
 #include <KAI/Container/Vector.h>
 
-#include "KAI/Memory/StackAllocator.h"
+#include "Cplus/Memory/StackAllocator.h"
 
 void TestStackAllocator()
 {

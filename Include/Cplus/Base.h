@@ -1,6 +1,7 @@
 #pragma once
 
-#include "KAI/Memory/Allocator.h"
+#include "Cplus/Memory/Allocator.h"
+#include "Cplus/Debug/Assert.h"
 
 // Common to all system types.
 typedef struct k_Base_t

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "KAI/Memory/Config.h"
-#include "KAI/Type/TypeNumber.h"
+#include "Cplus/Memory/Config.h"
+#include "Cplus/Type/TypeNumber.h"
 
 typedef k_Value (*k_Traits_Unary_Function)(k_Value *);
 typedef k_Value (*k_Traits_Binary_Function)(k_Value *, k_Value *);

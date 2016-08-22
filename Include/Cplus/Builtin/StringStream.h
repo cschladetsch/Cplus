@@ -1,6 +1,6 @@
 #pragma once
 
-#include "KAI/String.h"
+#include "String.h"
 
 typedef struct k_StringStream_t
 {

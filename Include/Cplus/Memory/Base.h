@@ -1,6 +1,6 @@
 #pragma once
 
-#include "KAI/ForwardDeclarations.h"
+#include "Cplus/Memory/Config.h"
 
 // Allocate without zeroing
 k_Any k_MallocRaw(size_t size);
@@ -13,4 +13,3 @@ k_Any k_ReAlloc(k_Any, size_t size);
 
 // Free
 void k_Free(k_Any);
-

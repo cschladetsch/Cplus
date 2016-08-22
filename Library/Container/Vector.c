@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <memory.h>
-#include <assert.h>
 
-#include "KAI/Container/Vector.h"
+#include "Cplus/Debug/Assert.h"
+#include "Cplus/Container/Vector.h"
 
 static void Construct(k_Any store, k_Any itemAlloc)
 {
@@ -92,7 +92,7 @@ void k_Vector_Reserve(k_Vector *self, size_t newMax)
 
 k_Any k_Vector_At(k_Vector *self, size_t index)
 {
-	assert(index < self->size);
+	k_Assert(index < self->size);
 	if (index >= self->size)
 		return null;
 
@@ -111,7 +111,7 @@ k_Any k_Vector_End(k_Vector *self)
 
 k_Any k_Vector_Back(k_Vector *self)
 {
-	assert(self->size > 0);
+	k_Assert(self->size > 0);
 	if (self->size == 0)
 		return null;
 
@@ -120,7 +120,7 @@ k_Any k_Vector_Back(k_Vector *self)
 
 k_Any k_Vector_Front(k_Vector *self)
 {
-	assert(self->size > 0);
+	k_Assert(self->size > 0);
 	if (self->size == 0)
 		return null;
 
@@ -144,7 +144,7 @@ void k_Vector_PushBack(k_Vector *self, k_Any element)
 
 void k_Vector_PopBack(k_Vector *self)
 {
-	assert(self->size > 0);
+	k_Assert(self->size > 0);
 	if (self->size == 0)
 		return;
 

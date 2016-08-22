@@ -1,8 +1,8 @@
 #pragma once
 
-#include "KAI/Base.h"
-#include "KAI/Container/Vector.h"
-#include "KAI/String_Slice.h"
+#include "Cplus/Base.h"
+#include "Cplus/Container/Vector.h"
+#include "String_Slice.h"
 
 typedef struct k_String_t
 {

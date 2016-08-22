@@ -68,9 +68,9 @@ void TestList()
 	k_List_Iterate(list, Sum);
 	CU_ASSERT_EQUAL(list_sum, 2 + 3);
 
-//	k_List_Destroy(list);
-//
-//	CU_ASSERT_EQUAL(0, nodesConstructed);
+	k_List_Destroy(list);
+
+	CU_ASSERT_EQUAL(0, nodesConstructed);
 }
 
 

@@ -35,9 +35,9 @@ k_Allocator k_Map_Alloc = { New, Construct, Destroy, sizeof(k_Map) };
 
 typedef struct Pair_t
 {
-	k_List_Node node;
 	k_Any key;
 	k_Any value;
+	k_List_Node node;
 } Pair;
 
 k_Map *k_Map_New(k_Allocator *keyAlloc, k_Allocator *valueAlloc, k_Map_HashFunction hash, k_Map_HashEquivFunction equiv)

@@ -1,5 +1,4 @@
 #include <memory.h>
-#include <stdlib.h>
 #include <assert.h>
 
 #include "KAI/Container/Vector.h"
@@ -44,45 +43,52 @@ k_List *k_List_New2(const k_Allocator *alloc)
 	return list;
 }
 
-// TODO: not have two de-allocations for a node!
-static void FreeList(k_List_Node *head, k_Destroy_Function destroy)
-{
-	for (k_List_Node *node = head; node != null; )
-	{
-		k_List_Node *next = node->next;
-		if (destroy)
-			destroy(node);
-
-		k_Free(node);
-		node = next;
-	}
-}
-
 void k_List_Destroy(k_List *self)
 {
-	FreeList(self->head, self->itemAllocator->destroy);
-	FreeList(self->pool, null);      // items in the pool have already been destroyed
+	k_List_Clear(self);
+	k_List_Trim(self);
 
 	if (self->base.allocated)
 		k_Free(self);
 }
 
-// TODO: not have two allocations for a node!
+void k_List_Clear(k_List *self)
+{
+	k_List_EraseRange(self, self->head, NULL);
+}
+
+void k_List_Trim(k_List *self)
+{
+	for (k_List_Node *node = self->pool; node; /* nop */)
+	{
+		k_List_Node *next = node->next;
+		k_Free(node);
+		node = next;
+	}
+}
+
+void k_List_EraseRange(k_List *self, k_List_Node *node, k_List_Node *end)
+{
+	k_Destroy_Function destroy = self->itemAllocator->destroy;
+	while (node != end)
+	{
+		k_List_Node *next = node->next;
+		destroy(node->payload);
+		node = next;
+	}
+}
+
 static k_List_Node *NewNode(k_List *self)
 {
-	const k_Allocator *elemAlloc = self->itemAllocator;
-	if (elemAlloc->new)
-		return (k_List_Node *)elemAlloc->new(0);
+	const k_Allocator *itemAlloc = self->itemAllocator;
+	k_List_Node *new = (k_List_Node *)k_MallocRaw(sizeof(k_List_Node) + itemAlloc->size);
+	memset(new, 0, sizeof(k_List_Node));
 
-	k_List_Node *node = (k_List_Node *)k_Malloc(elemAlloc->size);
-	if (elemAlloc->construct)
-	{
-		elemAlloc->construct(node, self);
-		return node;
-	}
+	k_Construct_Function construct = itemAlloc->construct;
+	if (construct)
+		construct(new->payload, self);
 
-	memset(node, 0, elemAlloc->size);
-	return node;
+	return new;
 }
 
 size_t k_List_Size(k_List *self)
@@ -148,7 +154,7 @@ static void Release(k_List *self, k_List_Node *node)
 
 	k_Destroy_Function destroy = self->itemAllocator->destroy;
 	if (destroy)
-		destroy(node);
+		destroy(node->payload);
 
 	node->next = self->pool;
 	self->pool = node;
@@ -187,8 +193,9 @@ void k_List_PopBack(k_List *self)
 		self->tail = tail;
 }
 
-void k_List_Iterate(k_List *list, void (*fun)(k_List_Node *))
+void k_List_Iterate(k_List *list, void (*fun)(k_Any))
 {
 	for (k_List_Node *node = list->head; node != null; node = node->next)
-		fun(node);
+		fun(node->payload);
 }
+

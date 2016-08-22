@@ -1,7 +1,6 @@
 #include <stdlib.h>
-#include <memory.h>
-#include "Cplus/Memory/Allocator.h"
-#include "Cplus/Container/Vector.h"
+#include "Cplus/Sys/Memory/Allocator.h"
+#include "Cplus/Sys/Container/Vector.h"
 
 static k_Vector *k_allocators;
 

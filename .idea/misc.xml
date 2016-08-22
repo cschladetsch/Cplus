@@ -5,6 +5,7 @@
     <sourceRoots>
       <file path="$PROJECT_DIR$/Include" />
       <file path="$PROJECT_DIR$/Library/CodeGen" />
+      <file path="$PROJECT_DIR$/Source" />
     </sourceRoots>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">

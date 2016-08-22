@@ -2,7 +2,7 @@
 
 #include "Cplus/Base.h"
 #include "Cplus/Type/TypeNumber.h"
-#include "Cplus/Container/Vector.h"
+#include "Cplus/Builtin/Container/Vector.h"
 
 // Class.h
 typedef struct k_Class_t

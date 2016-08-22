@@ -62,7 +62,9 @@ static k_List MakeBucket(k_Map *map)
 {
 	k_List list;
 	k_List_Alloc.construct(&list, 0);
+
 	list.itemAllocator = k_GetAllocator(sizeof(Pair));
+
 	return list;
 }
 

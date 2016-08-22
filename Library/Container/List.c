@@ -4,6 +4,8 @@
 #include "KAI/Container/Vector.h"
 #include "KAI/Container/List.h"
 
+static void Release(k_List *self, k_List_Node *node);
+
 static void Construct(k_Any where, k_Any args)
 {
 	memset(where, 0, sizeof(k_List));
@@ -49,6 +51,7 @@ void k_List_Destroy(k_List *self)
 	k_List_Trim(self);
 
 	if (self->base.allocated)
+		// TODO: use allocator to free resources
 		k_Free(self);
 }
 
@@ -62,6 +65,7 @@ void k_List_Trim(k_List *self)
 	for (k_List_Node *node = self->pool; node; /* nop */)
 	{
 		k_List_Node *next = node->next;
+		// TODO: use allocator to free resources
 		k_Free(node);
 		node = next;
 	}
@@ -69,16 +73,10 @@ void k_List_Trim(k_List *self)
 
 void k_List_EraseRange(k_List *self, k_List_Node *node, k_List_Node *end)
 {
-	k_Destroy_Function destroy = self->itemAllocator->destroy;
 	while (node != end)
 	{
 		k_List_Node *next = node->next;
-		node->next = self->pool;
-		self->pool = node;
-
-		if (destroy)
-			destroy(node->payload);
-
+		Release(self, node);
 		node = next;
 	}
 }

@@ -40,9 +40,11 @@ k_Vector *k_Vector_New2(const k_Allocator *elementAllocator)
 void k_Vector_Destroy(k_Vector *self)
 {
 	k_Vector_Clear(self);
+	// TODO: use allocator to free resources
 	k_Free(self->data);
 
 	if (self->base.allocated)
+		// TODO: use allocator to free resources
 		k_Free(self);
 }
 

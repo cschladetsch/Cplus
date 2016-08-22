@@ -27,7 +27,7 @@ typedef struct k_List_t
 k_List;
 
 // how to construct and destroy lists
-extern k_Allocator k_List_Alloc;
+extern const k_Allocator k_List_Alloc;
 
 // make a new list given element size. this implies
 // the payload is a POD

@@ -18,9 +18,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Test/Foo/TestFoo.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Foo/Foo.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/TestClassBuilder.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestVector.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestMap.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestList.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/main.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/TestString.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Test/TestContainers.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

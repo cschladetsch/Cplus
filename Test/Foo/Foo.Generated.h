@@ -11,7 +11,7 @@ typedef struct k_Result_t
 	k_Any value;
 
 	k_String (*ToString)(k_Result *);
-};
+} k_Result;
 
 typedef struct x_Foo_t x_Foo;
 typedef struct x_Foo_t

@@ -15,4 +15,5 @@ link_directories(lib /usr/local/lib
 link_libraries(Library cunit)
 #link_libraries(cunit valgrind)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY Bin)
 add_executable(Test ${SOURCE_FILES})

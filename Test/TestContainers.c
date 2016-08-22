@@ -40,12 +40,6 @@ void TestVector()
 	k_Vector_Destroy(v);
 }
 
-typedef struct MyNode_t
-{
-	k_List_Node base;
-	int val;
-} MyNode;
-
 int nodesConstructed;
 
 void ConstructMyNode(k_Any any, k_Any args)
@@ -60,39 +54,37 @@ void DestroyMyNode(k_Any any)
 //	printf("\nDestroying %p\n", any);
 }
 
-void Set(k_List_Node *node, int val)
+void Set(k_Any load, int val)
 {
-	MyNode *m = (MyNode *)node;
-	m->val = val;
+	*(int *)load = val;
 }
 
-int Get(k_List_Node *node)
+int Get(k_Any load)
 {
-	MyNode *m = (MyNode *)node;
-	return m->val;
+	return *(int *)load;
 }
 
-void Print(k_List_Node *node)
+void Print(k_Any load)
 {
-	printf("%d\n", Get(node));
+	printf("%d\n", Get(load));
 }
 
 int list_sum;
 
-void Sum(k_List_Node *node)
+void Sum(k_Any load)
 {
-	list_sum += ((MyNode *)node)->val;
+	list_sum += Get(load);
 }
 
 void TestList()
 {
-	k_Allocator alloc = { null, ConstructMyNode, DestroyMyNode, sizeof(MyNode) };
+	k_Allocator alloc = { null, ConstructMyNode, DestroyMyNode, sizeof(int) };
 	k_List *list = k_List_New2(&alloc);
 
 	for (int n = 0; n < 4; ++n)
 	{
-		MyNode *node = (MyNode *)k_List_PushBack(list);
-		node->val = n + 1;
+		k_List_Node *node = k_List_PushBack(list);
+		Set(node->payload, n + 1);
 	}
 
 	CU_ASSERT_EQUAL(k_List_Size(list), 4);

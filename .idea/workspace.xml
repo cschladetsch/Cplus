@@ -13,16 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc98f1a-a416-4335-88e6-871a3fcd79bb" name="Default" comment="Added implementation for List, Vector and starting on Map.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/KAI_C.iml" afterPath="$PROJECT_DIR$/.idea/KAI_C.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Include/KAI/Base.h" afterPath="$PROJECT_DIR$/Include/KAI/Base.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Allocators.c" afterPath="$PROJECT_DIR$/Library/Allocators.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Container/List.c" afterPath="$PROJECT_DIR$/Library/Container/List.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Container/Map.c" afterPath="$PROJECT_DIR$/Library/Container/Map.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/Container/Vector.c" afterPath="$PROJECT_DIR$/Library/Container/Vector.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/CMakeLists.txt" afterPath="$PROJECT_DIR$/Test/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/Foo/Foo.Generated.c" afterPath="$PROJECT_DIR$/Test/Foo/Foo.Generated.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/main.c" afterPath="$PROJECT_DIR$/Test/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/TestContainers.c" afterPath="$PROJECT_DIR$/Test/TestContainers.c" />
     </list>
     <ignored path="KAI_C.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestContainers.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestContainers.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test/TestContainers.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="92" column="4" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -89,37 +80,55 @@
       <file leaf-file-name="List.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/Container/List.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+            <state relative-caret-position="253">
+              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
               <folding>
-                <marker date="1471790174000" expanded="true" signature="175:213" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="244:370" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="405:442" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="542:571" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="609:702" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="750:824" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="943:1099" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="1135:1318" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="1408:1726" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="1761:1870" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="1904:1935" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="1979:2237" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="2293:2455" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="2500:2578" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="2633:2797" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="2834:3094" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="3130:3361" ph="{...}" />
-                <marker date="1471790174000" expanded="true" signature="3425:3512" ph="{...}" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Map.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library/Container/Map.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+              <folding>
+                <marker date="1471861285000" expanded="true" signature="488:598" ph="{...}" />
+                <marker date="1471861285000" expanded="true" signature="633:668" ph="{...}" />
+                <marker date="1471861285000" expanded="true" signature="1370:1407" ph="{...}" />
+                <marker date="1471861285000" expanded="true" signature="1441:1594" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Foo.Generated.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/Foo/Foo.Generated.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Foo.Generated.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/Foo/Foo.Generated.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,9 +137,11 @@
       <file leaf-file-name="List.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Include/KAI/Container/List.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+              <folding>
+                <marker date="1471861881000" expanded="true" signature="108:164" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,15 +182,12 @@
         <option value="$PROJECT_DIR$/Test/Foo/Readme.md" />
         <option value="$PROJECT_DIR$/Test/Foo/Foo.c" />
         <option value="$PROJECT_DIR$/Test/Foo/Foo.interface" />
-        <option value="$PROJECT_DIR$/Test/Foo/Foo.Generated.h" />
         <option value="$PROJECT_DIR$/Include/KAI/ForwardDeclarations.h" />
         <option value="$PROJECT_DIR$/Include/KAI/Allocator.h" />
         <option value="$PROJECT_DIR$/Test/Foo/TestFoo.c" />
         <option value="$PROJECT_DIR$/Include/KAI/Object.h" />
-        <option value="$PROJECT_DIR$/Include/KAI/Container/List.h" />
         <option value="$PROJECT_DIR$/Include/KAI/String_Slice.h" />
         <option value="$PROJECT_DIR$/Library/String_Slice.c" />
-        <option value="$PROJECT_DIR$/Test/TestContainers.c" />
         <option value="$PROJECT_DIR$/Test/TestString.c" />
         <option value="$PROJECT_DIR$/Include/KAI/String.h" />
         <option value="$PROJECT_DIR$/Library/k_String.c" />
@@ -189,21 +197,24 @@
         <option value="$PROJECT_DIR$/Library/Function.c" />
         <option value="$PROJECT_DIR$/Include/KAI/Base.h" />
         <option value="$PROJECT_DIR$/Library/Allocators.c" />
-        <option value="$PROJECT_DIR$/Library/Container/Map.c" />
         <option value="$PROJECT_DIR$/Test/Foo/Foo.Generated.c" />
         <option value="$PROJECT_DIR$/Library/Container/Vector.c" />
         <option value="$PROJECT_DIR$/Test/main.c" />
+        <option value="$PROJECT_DIR$/Library/Container/Map.c" />
+        <option value="$PROJECT_DIR$/Test/Foo/Foo.Generated.h" />
+        <option value="$PROJECT_DIR$/Include/KAI/Container/List.h" />
         <option value="$PROJECT_DIR$/Library/Container/List.c" />
         <option value="$PROJECT_DIR$/Test/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Test/TestContainers.c" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="123" />
-    <option name="y" value="111" />
+    <option name="x" value="91" />
+    <option name="y" value="23" />
     <option name="width" value="1193" />
-    <option name="height" value="664" />
+    <option name="height" value="872" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -353,28 +364,28 @@
       <workItem from="1471614357971" duration="4107000" />
       <workItem from="1471695586430" duration="4891000" />
       <workItem from="1471703473788" duration="1153000" />
-      <workItem from="1471790063059" duration="976000" />
+      <workItem from="1471790063059" duration="6005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44164000" />
+    <option name="totallyTimeSpent" value="49193000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="123" y="111" width="1193" height="664" extended-state="0" />
+    <frame x="91" y="23" width="1193" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.306314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32820514" sideWeight="0.6493174" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.49658704" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32820514" sideWeight="0.3506826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32342657" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23717949" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -486,6 +497,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -521,6 +533,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -528,6 +541,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -609,21 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Foo/Foo.Generated.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Foo/Foo.Generated.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Library/Memory.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -652,14 +651,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Container/Map.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#14#33#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -689,56 +683,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/TestContainers.c">
+    <entry file="file://$PROJECT_DIR$/Library/Container/Map.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="92" column="4" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
+        <state relative-caret-position="286">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1471861285000" expanded="true" signature="488:598" ph="{...}" />
+            <marker date="1471861285000" expanded="true" signature="633:668" ph="{...}" />
+            <marker date="1471861285000" expanded="true" signature="1370:1407" ph="{...}" />
+            <marker date="1471861285000" expanded="true" signature="1441:1594" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Foo/Foo.Generated.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Foo/Foo.Generated.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Include/KAI/Container/List.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+          <folding>
+            <marker date="1471861881000" expanded="true" signature="108:164" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Library/Container/List.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+        <state relative-caret-position="253">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding>
-            <marker date="1471790174000" expanded="true" signature="175:213" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="244:370" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="405:442" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="542:571" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="609:702" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="750:824" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="943:1099" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="1135:1318" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="1408:1726" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="1761:1870" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="1904:1935" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="1979:2237" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="2293:2455" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="2500:2578" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="2633:2797" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="2834:3094" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="3130:3361" ph="{...}" />
-            <marker date="1471790174000" expanded="true" signature="3425:3512" ph="{...}" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/TestContainers.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

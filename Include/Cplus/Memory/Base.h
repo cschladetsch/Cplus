@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Config.h"
+#include "Cplus/Memory/Config.h"
 
 // Allocate without zeroing
 k_Any k_MallocRaw(size_t size);

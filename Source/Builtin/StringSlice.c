@@ -1,4 +1,4 @@
-#include "Cplus/Sys/String_Slice.h"
+#include "Cplus/System/StringSlice.h"
 
 void k_String_Slice_Construct(k_String_Slice *self, const char *start, const char *end)
 {

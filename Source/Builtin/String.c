@@ -1,6 +1,6 @@
 #include <memory.h>
-#include "Cplus/Sys/String.h"
-#include "Cplus/Sys/Memory/Memory.h"
+#include <Cplus/Base/Memory/Base.h>
+#include "Cplus/System/String.h"
 
 void Construct(k_Any where, k_Any args)
 {
@@ -22,7 +22,7 @@ void Destroy(k_Any where)
 	k_Vector_Destroy(&self->str);
 }
 
-k_Allocator k_String_Alloc = { New, Construct, Destroy, sizeof(k_String) };
+k_Allocator k_String_Alloc = { New, Construct, Destroy, 0, 0, sizeof(k_String) };
 
 k_String *k_String_New()
 {

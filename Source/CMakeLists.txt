@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.4)
 
-set(root Library/)
+set(root Source/)
 include_directories(Include)
 set(SOURCE_ROOT ${root}/*.c)
 file(GLOB_RECURSE SOURCE_FILES ${SOURCE_ROOT})

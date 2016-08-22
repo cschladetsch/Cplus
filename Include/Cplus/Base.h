@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cplus/Memory/Allocator.h"
+#include "Cplus/System/Memory/Allocator.h"
 #include "Cplus/Debug/Assert.h"
 
 // Common to all system types.

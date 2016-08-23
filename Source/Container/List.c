@@ -1,9 +1,9 @@
 #include <memory.h>
 #include <assert.h>
-#include <Cplus/Sys/Memory/Base.h>
+#include <Cplus/Memory/Base.h>
 
-#include "Cplus/Sys/Container/Vector.h"
-#include "Cplus/Sys/Container/List.h"
+#include "Cplus/Container/Vector.h"
+#include "Cplus/Container/List.h"
 
 static void Release(k_List *self, k_List_Node *node);
 

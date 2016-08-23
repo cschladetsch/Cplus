@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <memory.h>
 
-#include "Cplus/System/Memory/Memory.h"
+#include "Cplus/Memory/Memory.h"
 
 // define to provide detailed logging info for memory usage
 //#define K_MEMORY_TRACE

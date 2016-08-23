@@ -27,7 +27,7 @@ static void Destroy(k_Any where)
 	k_List_Destroy((k_List *)where);
 }
 
-const k_Allocator k_List_Alloc = { New, Construct, Destroy, 0, sizeof(k_List) };
+const k_Allocator k_List_Alloc = { New, Construct, Destroy, 0, 0, sizeof(k_List) };
 
 static k_List *NewList()
 {

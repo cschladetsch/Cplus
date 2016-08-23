@@ -1,6 +1,6 @@
 #include <CUnit/Basic.h>
 
-#include "Cplus/Builtin/String.h"
+#include "Cplus/System/String.h"
 
 void TestString()
 {

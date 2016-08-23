@@ -1,5 +1,5 @@
 #include "Cplus/CrossPlatform.h"
-#include X_PLATFORM_INCLUDE(Network)
+//#include X_PLATFORM_INCLUDE(Network)
 
 #include <CUnit/Basic.h>
 #include "Cplus/Memory/Allocator.h"

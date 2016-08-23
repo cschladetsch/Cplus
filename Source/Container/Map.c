@@ -31,7 +31,7 @@ static void Destroy(k_Any where)
 	k_Map_Destroy((k_Map *)where);
 }
 
-k_Allocator k_Map_Alloc = { New, Construct, Destroy, sizeof(k_Map) };
+k_Allocator k_Map_Alloc = { New, Construct, Destroy, 0, 0, sizeof(k_Map) };
 
 typedef struct Pair_t
 {

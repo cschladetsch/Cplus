@@ -1,5 +1,5 @@
 #include <CUnit/Basic.h>
-#include <KAI/ForwardDeclarations.h>
+#include <Cplus/ForwardDeclarations.h>
 
 typedef struct Foo_t Foo;
 typedef struct Foo_t

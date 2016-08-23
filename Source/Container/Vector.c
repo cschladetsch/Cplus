@@ -25,7 +25,7 @@ static void Destroy(k_Any vector)
 	k_Vector_Clear((k_Vector *)vector);
 }
 
-k_Allocator k_Vector_Alloc = { New, Construct, Destroy, sizeof(k_Vector) };
+k_Allocator k_Vector_Alloc = { New, Construct, Destroy, 0, 0, sizeof(k_Vector) };
 
 k_Vector *k_Vector_New(size_t elementSize)
 {

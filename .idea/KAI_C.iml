@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestVector.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestMap.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Container/TestList.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test/TestPlatform.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Memory/TestStackAllocator.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/Memory/TestAllocator.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test/TestString.c" isTestSource="false" />

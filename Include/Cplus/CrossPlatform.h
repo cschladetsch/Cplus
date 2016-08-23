@@ -1,1 +1,8 @@
+#pragma once
+
+#define CPLUS_CAT(A, B) CPLUS_REAL_CAT(A, B)
+#define CPLUS_REAL_CAT(A, B) A ## B
+
+#define CPLUS_STRINGISE(X) #X
+#define CPLUS_PLATFORM_INCLUDE(H) CPLUS_CAT(CPLUS_PLATFORM, H)
 

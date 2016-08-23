@@ -2,7 +2,6 @@
 
 #include "Cplus/Base.h"
 
-
 typedef struct k_Result_t k_Result;
 typedef struct k_Result_t
 {

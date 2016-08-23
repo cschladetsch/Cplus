@@ -2,6 +2,7 @@
 
 #include "Cplus/Config.h"
 
+typedef struct k_Allocator_t k_Allocator;
 typedef struct k_Vector_t k_Vector;
 typedef struct k_List_t k_List;
 typedef struct k_Map_t k_Map;

@@ -1,5 +1,6 @@
 #include <memory.h>
-#include <Cplus/Base/Memory/Base.h>
+
+#include "Cplus/Memory/Allocator.h"
 #include "Cplus/System/String.h"
 
 void Construct(k_Any where, k_Any args)

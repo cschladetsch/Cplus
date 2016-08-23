@@ -1,8 +1,7 @@
 #pragma once
 
-#include <Cplus/Base/Memory/Memory.h>
 #include "Cplus/ForwardDeclarations.h"
-#include "Allocator.h"
+#include "Cplus/Memory/Allocator.h"
 
 typedef struct k_StackAllocator_t
 {
@@ -17,7 +16,6 @@ typedef struct k_StackAllocator_t
 
 	// used to construct/delete items
 	k_Allocator *allocator;
-
 }
 k_StackAllocator;
 

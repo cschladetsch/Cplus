@@ -2,7 +2,7 @@
 
 #include "Cplus/Base.h"
 #include "Cplus/Container/Vector.h"
-#include "StringSlice.h"
+#include "Cplus/System/StringSlice.h"
 
 typedef struct k_String_t
 {

@@ -2,6 +2,7 @@
 #include <memory.h>
 
 #include "Cplus/Debug/Assert.h"
+#include "Cplus/Memory/Allocator.h"
 #include "Cplus/Container/Vector.h"
 
 static void Construct(k_Any store, k_Any itemAlloc)

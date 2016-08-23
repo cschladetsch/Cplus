@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Cplus/ForwardDeclarations.h"
+#include "Cplus/Base.h"
+#include "Cplus/Memory/Memory.h"
 #include "Cplus/Memory/Allocator.h"
 
 typedef struct k_StackAllocator_t

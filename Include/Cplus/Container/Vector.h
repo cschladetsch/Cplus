@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Cplus/Base.h"
-#include "Cplus/Memory/Base.h"
+#include "Cplus/Memory/Memory.h"
 
 // A dynamic array of PODs
 #define SELF struct k_Vector_t

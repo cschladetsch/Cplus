@@ -1,9 +1,7 @@
-#include "Cplus/Base.h"
 #include "Cplus/Memory/StackAllocator.h"
 
 static void Construct(k_Any self, k_Any args)
 {
-
 }
 
 static k_Any New(k_Any args)

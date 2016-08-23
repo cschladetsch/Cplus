@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Cplus/Config.h"
-#include "Cplus/Memory/Base.h"
 #include "Cplus/ForwardDeclarations.h"
+#include "Cplus/Memory/Memory.h"
 
 // Allocate a new item
 typedef k_Any (*k_New_Function)(k_Any args);
